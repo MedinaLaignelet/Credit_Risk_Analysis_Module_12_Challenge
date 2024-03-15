@@ -12,19 +12,24 @@ The Logistic Regression Modeling is divided into 4 steps.  The code starts by pr
 ## Results
 The code will use the 2 data sets to and produce a scoring feature to help determine accuracy, precision and recall metrics.
 Description of Accuracy, Precision, and Recall scores for the original dataset (Model 1) and the Oversampled Dataset (Model 2).
+
 ### Accuracy: Ratio of correctly predicted observations to the total number of observations. However, it an be susceptible to imbalanced datasets.  
 * Machine Learning Model 1:  0.99
 * Machine Learning Model 2: 0.99
-Both model s have a very high degree of accuracy, so we will need to look at other metrics to determine if the dataset may be imbalanced.
+
+Both models have a very high degree of accuracy, so we will need to look at other metrics to determine if the dataset may be imbalanced.
 
 ### Precision: Precision is the ratio of correctly predicted positive observations to the total predicted positive observations. In the case of the dataset it would be understood as for those loans that were classified at risk, that were actually at risk.  
 * Machine Learning Model 1:  Healthy: 1.00; At Risk: 0.86
 * Machine Learning Model 2: Healthy: 1.00; At Risk: 0.84
+
 For both models the precision is very high for the Healthy loans and not high for the at risk. For model one, we can see that the data is very imbalanced with a value count of 75,036 samples of healthy loans (0) and just 2,500 of At risk loans (1). It also appears that even after resampling the data, the precision for the at Risk loans worsen.
 
-### Recall is the ratio of correctly predicted positive observations to all predicted observations for that class. all of the actual loan samples, how many were correctly classified as healthy or at risk?
+### Recall is the ratio of correctly predicted positive observations to all predicted observations for that class from all of the actual loan samples, how many were correctly classified as healthy or at risk.
 * Machine Learning Model 1: Healthy 0.99; At Risk 1.00
 * Machine Learning Model 2: Healthy 0.969. at risk 0.99
+
+Both models have high ricalls but lower for the At Risk loans. A more balanced model may show lower recall ratios.  The focus would be the number of false negatives which would be at risk loans not determined to be in that class.
 
 ## Summary
 Neither model is precise enough for the at risk loans (1).  The data appears to be too imbalanced and the Oversampling approach may not have improved precision for the At Risk (1) class.   It may be needed to use Undersampling or obtain a new data set with better “At Risk Loan” samples to create a stronger model in training.
